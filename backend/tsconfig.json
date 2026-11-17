@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "rootDir": ".",
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "types": ["bun", "node"],
+    "sourceMap": true,
+    "declaration": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "mikro-orm.config.ts"],
+  "exclude": ["node_modules", "dist", "test"]
+}

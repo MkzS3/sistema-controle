@@ -1,0 +1,15 @@
+VERSAO: DESENVOLVIMENTO — NAO APROVADA PARA ENTREGA FINAL
+
+Verificacoes executadas em 2026-11-16:
+- bun run test:unit: 145 aprovados, 0 falhas.
+- bun run typecheck: passou.
+- bun run build: passou.
+- bun run test:e2e: 4 aprovados, 0 falhas, 237 assertions; Edge com API controlada.
+
+Pendencias obrigatorias:
+- PostgreSQL nativo nao esta instalado ou acessivel neste ambiente.
+- Migrations, rollback, constraints, triggers, integracao PostgreSQL, concorrencia e idempotencia persistente nao foram executados.
+- Inbox/Outbox/SQS/LocalStack e testes distribuidos nao foram validados.
+- A montagem do volume do Compose precisa ser revisada para a imagem PostgreSQL 18 antes de usar containers.
+
+Este pacote nao representa uma versao validada para producao ou entrega final. Contem codigo-fonte, configuracoes de exemplo, migrations, testes e documentacao; dependencias instaladas, .env e arquivos de dados foram excluidos.

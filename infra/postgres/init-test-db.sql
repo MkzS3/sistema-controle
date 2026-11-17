@@ -1,0 +1,1 @@
+CREATE DATABASE dividend_control_test;

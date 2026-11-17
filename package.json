@@ -1,0 +1,33 @@
+{
+  "name": "dividend-control",
+  "private": true,
+  "packageManager": "bun@1.4.4",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "bun run --filter @dividend/backend dev",
+    "dev:backend": "bun run --filter @dividend/backend dev",
+    "dev:worker": "bun run --filter @dividend/backend dev:worker",
+    "dev:frontend": "bun run --filter @dividend/frontend dev",
+    "build": "bun run --filter '*' build",
+    "typecheck": "bun run --filter '*' typecheck",
+    "test": "bun run --filter @dividend/backend test",
+    "test:unit": "bun run --filter '*' test:unit",
+    "test:e2e": "bun run --filter @dividend/frontend test:e2e",
+    "test:integration": "bun run --filter @dividend/backend test:integration",
+    "test:concurrency": "bun run --filter @dividend/backend test:concurrency",
+    "db:migration:create": "bun run --filter @dividend/backend db:migration:create",
+    "db:migration:up": "bun run --filter @dividend/backend db:migration:up",
+    "db:migration:down": "bun run --filter @dividend/backend db:migration:down",
+    "infra:up": "docker compose up -d postgres localstack",
+    "infra:down": "docker compose down",
+    "infra:logs": "docker compose logs -f postgres localstack"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.0",
+    "@types/node": "^24.10.0",
+    "typescript": "^7.0.2"
+  }
+}

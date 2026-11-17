@@ -1,0 +1,3 @@
+# Integration tests
+
+`persistence.integration.test.ts` uses an actual PostgreSQL database selected by `TEST_DATABASE_URL`; it is skipped when that variable is missing. Use a dedicated test database because the suite applies versioned migrations and leaves immutable ledger rows for audit. Concurrent duplicate-obligation, payment-idempotency, Inbox, transaction rollback, and database-trigger cases run here. Etapa 5 also requires joint PostgreSQL+LocalStack tests for the atomic Inbox/application transaction, Outbox publication, SQS redelivery/DLQ, retries and shutdown. These scenarios remain pending and are not proven by unit doubles.
